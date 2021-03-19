@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script ="javascript" href="javascript.js"> -->
+        <script src="javascript.js" defer></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div> -->
+        <!-- <span>prismasoft</span>
+        <span>prismasoft australia</span>
+        <button name="">click me
+
+        </button> -->
+    
+    
+        <!-- <div id="p">prisma</div>
+        <div id="s">softs </div>
+        <button id="clickme" onclick="clickToChange()">click me</button> -->
+        
+    
+    
+    <!-- </div> -->
+    
+   
+   
+   <!-- <div>
+  <span class="p1">prismasoft</span><br>
+<button onclick="onMyClick()">click it</button><br>
+    <span class="p2"> prismasoft australia</span>
+
+</div>  -->
+    
+
+<div style="text-align: center; background-color:lightblue;">
+    <textarea name="" id="note" cols="20" rows="5" placeholder="Enter your note here !"></textarea><br>
+    <input type="hidden" id="saveIndex">
+    <button onclick="onAddNote()" id="btnAdd">Add</button>
+    <button onclick="onSaveTask()" id="btnSave" style="display: none;">Save</button>
+
+</div>
+
+<div>
+    <p id="list" style="color: burlywood; text-align: center; font-weight: lighter; font-variant: small-caps; ">Your Note is Currently Empty</p>
+</div>
+<div id="print-here"
+     style="text-align:center; color: white; border: 1px solid; background-color: slateblue;" >
+
+</div>
+
+</body>
+
+
+
+
+
+<style>
+    #note{
+        margin-top:40px;
+    }
+    #btnAdd{
+        background-color: green;
+        color: white;
+        font-size: 20px;
+        padding: 5px 15px;
+        margin: 10px;
+    }
+
+    #btnAdd:hover{
+        cursor: pointer;
+        background-color: indigo;
+    }
+    #btnSave{
+        background-color: green;
+        color: white;
+        font-size: 20px;
+        padding: 5px 15px;
+        margin: 10px;
+        justify-content: center;
+    }
+
+    #btnSave:hover{
+        cursor: pointer;
+        background-color: indigo;
+    }
+
+    #btnDelete{
+    background-color: transparent;
+    color: #d97c7c;
+        font-size: 20px;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        padding: 10px 10px;
+        margin: 15px;
+
+    }
+    #btnDelete:hover{
+        color: #7a1818;
+    }
+</style>
+</html>
