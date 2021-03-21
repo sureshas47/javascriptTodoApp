@@ -70,6 +70,8 @@
 window.onload=function(){
 
 onGetNotes();
+
+
 };
 
 let MY_KEY='_note';
@@ -88,7 +90,8 @@ function onAddNote(){
    localStorage.setItem(MY_KEY,JSON.stringify(multipleNotes));
     document.getElementById('note').value='';
     onGetNotes();
-    onSaveTask();
+    // onAutoReload();
+    // onSaveTask();
 
 }
 
@@ -118,6 +121,7 @@ function onGetNotes(){
         //  }
     });
     document.getElementById('print-here').innerHTML=my_notes_html;
+
 }
 
 function onDeleteNote(index){
@@ -133,37 +137,44 @@ function onEditNote(index){
     let addButton=document.getElementById('btnAdd');
     let saveButton=document.getElementById('btnSave');
     saveIndex.value=index;
-    // console.log(index);
     let multipleNotes=localStorage.getItem(MY_KEY);
     let editedNotes= JSON.parse(multipleNotes);
+    // console.log(editedNotes);
     // let textvalue=document.getElementById('print-here').value;
     // console.log(textvalue.value);
     let textvalue=editedNotes[index];
-    console.log(textvalue);
-    document.getElementById('note').innerText=textvalue.value;
+    // console.log(textvalue);
+    document.getElementById('note').value=textvalue.value;
     addButton.style.display="none";
     saveButton.style.display="block";
+    onGetNotes();
 
 }
 
 function onSaveTask(){
-    let addButton=document.getElementById('btnAdd');
 
+    // let addButton=document.getElementById('btnAdd');
     let saveButton=document.getElementById('btnSave');
+    let editInput=document.getElementById('print-here').value;
+    let myNote=document.getElementById('note');
     let multipleNotes=localStorage.getItem(MY_KEY);
     let editedNotes= JSON.parse(multipleNotes);
     let saveIndex=document.getElementById('saveIndex').value;
-    console.log(saveIndex);
-    let input=document.getElementById('note').value;
-    editedNotes[saveIndex]=input;
-    // console.log(editedNotes);
-    localStorage.setItem(MY_KEY,JSON.stringify(editedNotes));
-    onGetNotes();
-    console.log(editedNotes,multipleNotes);
 
-    // addButton.style.display="block";
-    // document.getElementById('print-here').value=a;
+    editedNotes[saveIndex]=myNote.value;
+    // console.log(saveIndex);
+    // editedNotes.splice(saveIndex,1, editInput);
+    localStorage.setItem(MY_KEY,JSON.stringify(editedNotes));
+    // document.getElementById('print-here').innerHTML=editedNotes[saveIndex];
+    onGetNotes();
+
 }
+
+// function onAutoReload(){
+//     window.setTimeout(function () {
+//         window.location.reload();
+//     }, 100);
+// }
 
 // function validate(){
 //     let cb=document.getElementById('isChecked').checked=true;
